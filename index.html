@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>祈’s OC Realm</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 全局 BGM -->
+  <audio id="bgm" src="YOUR_BGM_URL.mp3" loop></audio>
+  <button id="btn-bgm">🔈</button>
+
+  <!-- 导航 -->
+  <nav id="navbar">
+    <a href="#home">Home</a>
+    <a href="#char">角色档案</a>
+    <a href="#world">世界观</a>
+    <a href="#story">故事线</a>
+    <a href="#gallery">图集</a>
+    <a href="#message">留言</a>
+    <a href="#calendar">记账</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="home" class="panel">
+    <h1>祈’s OC Realm</h1>
+    <p>血与墨交织的异界幻想</p>
+    <a class="btn" href="#char">Enter</a>
+  </section>
+
+  <section id="char" class="panel">
+    <h2>角色档案</h2>
+    <div class="cards">
+      <!-- 复制 .card 块自行添加新角色 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="角色1">
+        <h3>角色名1</h3>
+        <p>这里是角色简介，2~3 行文字。</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="角色2">
+        <h3>角色名2</h3>
+        <p>这里是角色简介，2~3 行文字。</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/200" alt="角色3">
+        <h3>角色名3</h3>
+        <p>这里是角色简介，2~3 行文字。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="world" class="panel">
+    <h2>世界观设定</h2>
+    <div class="world-columns">
+      <div>
+        <h3>势力 A</h3>
+        <p>描述……</p>
+        <h3>势力 B</h3>
+        <p>描述……</p>
+      </div>
+      <div>
+        <img src="https://via.placeholder.com/400x300" alt="世界地图">
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="panel">
+    <h2>故事线</h2>
+    <ul class="timeline">
+      <li><strong>01. 序幕</strong> — 事件简介……</li>
+      <li><strong>02. 焚城篇</strong> — 事件简介……</li>
+      <!-- 复制<li>增加更多章节 -->
+    </ul>
+  </section>
+
+  <section id="gallery" class="panel">
+    <h2>图集</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://via.placeholder.com/800x500" alt=""></div>
+        <div class="swiper-slide"><img src="https://via.placeholder.com/800x500" alt=""></div>
+        <div class="swiper-slide"><img src="https://via.placeholder.com/800x500" alt=""></div>
+      </div>
+      <!-- 如果需要左右箭头 -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section>
+
+  <section id="message" class="panel">
+    <h2>留言区</h2>
+    <!-- Utterances: 基于 GitHub Issues 的免费评论系统 -->
+    <div id="utterances-container"></div>
+  </section>
+
+  <section id="calendar" class="panel">
+    <h2>约稿记账日历</h2>
+    <div id="calendar-container"></div>
+    <p class="tip">点击日期添加/编辑记录（存储于浏览器）。</p>
+  </section>
+
+  <!-- 点击特效脚本 -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+  <script>
+    // Utterances 评论配置
+    const itch = document.createElement('script');
+    itch.src = 'https://utteranc.es/client.js';
+    itch.async = true;
+    itch.setAttribute('repo', '你的GitHub用户名/仓库名');
+    itch.setAttribute('issue-term', 'pathname');
+    itch.setAttribute('theme', 'github-dark');
+    document.getElementById('utterances-container').appendChild(itch);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

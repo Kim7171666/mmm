@@ -1,0 +1,65 @@
+/* 全局变量 */
+:root {
+  --bg-color: #0b0000;
+  --text-color: #f8f0e3;
+  --accent-red: #cc0000;
+  --accent-gold: #ccaa00;
+}
+
+/* Reset & 基础 */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Cormorant Garamond', serif; background: var(--bg-color); color: var(--text-color); }
+a { text-decoration:none; color: var(--accent-gold); }
+h1, h2, h3 { text-shadow: 2px 2px 4px #000; }
+
+/* 导航 */
+#navbar {
+  position: fixed; top:0; width:100%; background:rgba(0,0,0,0.7); display:flex;
+  justify-content:center; padding:10px 0; z-index:1000;
+}
+#navbar a { margin: 0 15px; font-size:16px; transition: color .3s; }
+#navbar a:hover { color: var(--accent-red); }
+
+/* BGM 按钮 */
+#btn-bgm {
+  position: fixed; top: 15px; right: 15px; background: none;
+  border: none; font-size:24px; color: var(--accent-red); cursor:pointer;
+}
+
+/* 全局 Section (面板) */
+.panel {
+  min-height: 100vh; padding: 120px 20px 60px;
+  scroll-snap-align: start; position: relative;
+}
+body { scroll-snap-type: y mandatory; overflow-y: scroll; }
+
+/* Home */
+#home { background: url('https://via.placeholder.com/1600x900/220000/000000') center/cover no-repeat; display:flex; align-items:center; justify-content:center; flex-direction:column; }
+#home h1 { font-size:4rem; margin-bottom:10px; }
+#home p { font-size:1.2rem; margin-bottom:20px; }
+#home .btn { padding:10px 30px; border:2px solid var(--accent-red); transition:.3s; }
+#home .btn:hover { background:var(--accent-red); color:#000; }
+
+/* 角色档案 */
+.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.card { background:rgba(34,0,0,0.6); padding:10px; width:200px; border-radius:8px; text-align:center; transition:.3s; cursor:pointer; }
+.card img { width:100%; border-radius:50%; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 0 10px var(--accent-red); }
+
+/* 世界观 */
+.world-columns { display:flex; flex-wrap:wrap; gap:20px; }
+.world-columns > div { flex:1; min-width:280px; }
+
+/* 故事线 */
+.timeline { list-style:none; padding-left:20px; border-left:2px solid var(--accent-red); }
+.timeline li { margin:15px 0; }
+
+/* 图集 (Swiper) */
+.swiper-container { width:100%; max-width:800px; margin:0 auto; }
+.swiper-slide img { width:100%; border-radius:8px; }
+
+/* 留言 & 日历 */
+#message, #calendar { text-align:center; }
+.tip { margin-top:10px; color: var(--accent-gold); }
+
+/* 动效：点击粒子 */
